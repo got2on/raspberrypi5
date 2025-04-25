@@ -1,0 +1,25 @@
+def greet(lang):
+    if lang == 'es':
+        return 'Hola'
+    elif lang == 'fr':
+        return 'Bonjour'
+    elif lang == 'sw':  # Swahili
+        return 'Habari'
+    elif lang == 'uk':  # Ukrainian
+        return 'Привіт'  # "Privit" is "Hello" in Ukrainian
+    elif lang == 'el':  # Middle Earth Elven (Quenya)
+        return 'Mae govannen'  # "Well met" in Elven
+    elif lang == 'tlh':  # Klingon
+        return 'Hello'  # In Klingon, "Hello" is often just "Hello" or "nuqneH"
+    else:
+        return 'Hello'
+
+def main():
+    print(greet('en'), 'Glenn')
+    print(greet('fr'), 'Sabine')
+    print(greet('es'), 'Carlos')
+    name = input("What is your name? ")
+    lang = input("Which language do you want to greet in? (es, fr, sw, uk, el, tlh) ")
+    print(greet(lang), name)
+
+main()
