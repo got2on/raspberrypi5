@@ -1,0 +1,46 @@
+def main():
+    print("Starting The Code Challenge")
+    
+    makey_bot = {
+        'wave_pattern': [45, 2, 90, 1.5, 30, 3],
+        'eyes_rgb_status': 1,
+        'rgb_eye_color_1': '#FF5733',
+        'rgb_eye_color_2': '#33FF57',
+        '7seg_value': 7,
+        'led_1_status': 1,
+        'led_1_blink': 0.5,
+        'led_2_status': 0,
+        'led_2_blink': 1.0,
+        'led_3_status': 1,
+        'led_3_blink': 2.0
+    }
+
+    
+    user_key = input("\nEnter a key to check its value in the dictionary: ")
+    
+    if user_key in makey_bot:
+        print(f"The value of '{user_key}' is: {makey_bot[user_key]}")
+    else:
+        print(f"'{user_key}' is not a valid key in the dictionary.")
+    
+    update_key = input("\nDo you want to update a key value? (yes/no): ").lower()
+    if update_key == 'yes':
+        key_to_update = input("Enter the key you want to update: ")
+        if key_to_update in makey_bot:
+            new_value = input(f"Enter the new value for '{key_to_update}': ")
+            # Attempt to interpret the new value to its appropriate type
+            try
+                if '.' in new_value:
+                    new_value = float(new_value)
+                else:
+                    new_value = int(new_value)
+            except ValueError:
+                pass
+            makey_bot[key_to_update] = new_value
+            print(f"The value of '{key_to_update}' has been updated to: {new_value}")
+        else:
+            print(f"'{key_to_update}' is not a valid key in the dictionary.")
+    
+    print("\nEnding The Code Challenge")
+
+main()
